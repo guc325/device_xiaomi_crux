@@ -1,78 +1,37 @@
-# android_device_xiaomi_umi
-For building TWRP for Xiaomi Mi 10 / 10 Pro
+# device_xiaomi_crux
 
-TWRP device tree for Xiaomi Mi 10 and Mi 10 Pro
+xiaomi Mi 9 Pro 5G(代号为“rcux”）是小米于2019年9月发布的一款高档智能手机。
 
-Kernel and all blobs are extracted from [miui_UMI_20.5.24_096a7991fe_10.0](https://bigota.d.miui.com/20.5.24/miui_UMI_20.5.24_096a7991fe_10.0.zip) firmware.
 
-The Xiaomi Mi 10 (codenamed _"umi"_) and Xiaomi Mi 10 Pro (codenamed _"cmi"_) are high-end smartphones from Xiaomi.
+##设备规格
 
-Xiaomi Mi 10 / 10 Pro was announced and released in February 2020.
-
-## Device specifications
-
-| Device       | Xiaomi Mi 10 / 10 Pro                       |
-| -----------: | :------------------------------------------ |
-| SoC          | Qualcomm SM8250 Snapdragon 865              |
-| CPU          | 8x Qualcomm® Kryo™ 585 up to 2.84GHz        |
-| GPU          | Adreno 630                                  |
-| Memory       | 8GB / 12GB RAM (LPDDR5)                     |
-| Shipped Android version | 10                               |
-| Storage      | 128GB / 256GB / 512GB UFS 3.0 flash storage |
-| Battery      | Non-removable Li-Po 4780mAh                 |
-| Dimensions   | 162.58 x 74.8 x 8.96 mm                     |
-| Display      | 2340 x 1080 (19.5:9), 6.67 inch             |
+|设备| Xiaomi Mi9 Pro 5G|
+| ----------------------: | :---------------------------------------------- |
+|SoC |高通 骁龙 855+ plus 5G|
+|CPU |1x2.96Ghz 超级大核 + 3x2.42GHz + 4x1.8GHz 小核| 
+|GPU |Adreno 640|
+|内存| 8GB/12GB|
+|已发布安卓版本|安卓11，MIUI 12.5|
+|存储容量| 128GB/512GB|
+|电池| Li Po 4000毫安时，不可拆卸|
+|尺寸| 164.15 x 75.35 x 8 mm|
+|显示| 1080 x 2400像素，6.39英寸|
+|后摄像头1 | 108 MP，双LED双色闪光灯，HDR，全景|
+|后置摄像头2 | 8 MP|
+|后置摄像头3 | 2 MP|
+|后置摄像头4 | 2 MP|
+|前置摄像头| 20MP，HDR，全景|
 
 ## Device picture
 
-![Xiaomi Mi 10](https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1581494372.61732687.jpg)
+![Xiaomi Mi9 Pro 5G](https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5f5a312e5fa55c4df8aad5cede99c5fe.jpg)
 
-## Features
 
-**Works**
-
-- Booting.
-- [Decryption](https://github.com/simonsmh/android_bootable_recovery/commits/android-10.0).
-- ADB
-- MTP
-- Super partition functions
-- Vibration
-
-**Not Working**
-- OTG
-
-Mi 10 is using Dynamic Partition! We need update from TWRP.
-
-## Compile
-
-First checkout minimal twrp with omnirom tree:
+## Copyright
 
 ```
-repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-10.0
-repo sync
-```
-
-Then add these projects to .repo/manifest.xml:
-
-```xml
-<project path="device/xiaomi/umi" name="TeamWin/android_device_xiaomi_umi" remote="github" revision="android-10.0" />
-```
-
-Finally execute these:
-
-```
-. build/envsetup.sh
-lunch omni_umi-eng
-mka recoveryimage ALLOW_MISSING_DEPENDENCIES=true # Only if you use minimal twrp tree.
-```
-
-To test it:
-
-```
-fastboot boot out/target/product/umi/recovery.img
-```
-
-## Thanks
-- [FsCrypt fix by mauronofrio](https://github.com/mauronofrio/android_bootable_recovery)
-- [Decryption by bigbiff](https://github.com/bigbiff/android_bootable_recovery)
-- [Oneplus 8 TWRP by mauronofrio](https://github.com/mauronofrio/android_device_oneplus_instantnoodle_TWRP)
+#
+# Copyright (C) 2021 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
